@@ -9,14 +9,14 @@ def count_words(input, output):
 
     with open(input, 'r') as input_file:
         text = input_file.read()
-    wordstring = text.translate(None, string.punctuation)
-    wordlist = wordstring.split()
-    counts = collections.Counter(wordlist)
-    ordered = counts.most_common()
+        wordstring = text.translate(None, string.punctuation)
+        wordlist = wordstring.split()
+        counts = collections.Counter(wordlist)
+        ordered = counts.most_common()
+    
     with open(output, 'w') as output_file:
         writer = csv.writer(output_file)
         writer.writerows(ordered)
-
 
 if __name__ == '__main__':
 
